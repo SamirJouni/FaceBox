@@ -2,7 +2,7 @@ import React from 'react';
 
 const Logo = () => {
 	return (
-		<div></div>
+		<div className="ma4 mt0"></div>
 	 );
 }
 
