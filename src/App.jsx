@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
+import ImageForm from "./components/ImageForm/ImageForm";
 import "./App.css";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
 			<div>
 				<Navigation />
 				<Logo />
+				<ImageForm />
 			</div>
 		);
 	}
