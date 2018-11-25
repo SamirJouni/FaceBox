@@ -1,5 +1,6 @@
 body {
 	background: linear-gradient(89deg, #3ffb63 0%, #516efb 100%);
+	font-family: 'Courier New', Courier, monospace;
 }
 button {
 	cursor: pointer;
