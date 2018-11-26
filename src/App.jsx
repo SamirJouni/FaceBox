@@ -30,6 +30,10 @@ class App extends Component {
 		this.setState({linkToImage: e.target.value});
 	}
 
+	onSubmit = e => {
+		e.preventDefault();
+	}
+
 	render() {
 		return (
 			<div>
@@ -37,7 +41,7 @@ class App extends Component {
 				<Navigation />
 				<Logo />
 				<Rank />
-				<ImageForm />
+				<ImageForm onLinkInput={this.handleLinkInput} linkToImage={this.state.linkToImage} onSubmit={this.onSubmit}/>
 			</div>
 		);
 	}
