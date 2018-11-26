@@ -26,6 +26,10 @@ class App extends Component {
 		}
 	}
 
+	handleLinkInput = () => {
+
+	}
+
 	render() {
 		return (
 			<div>
