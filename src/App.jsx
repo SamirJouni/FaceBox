@@ -26,8 +26,8 @@ class App extends Component {
 		}
 	}
 
-	handleLinkInput = () => {
-
+	handleLinkInput = e => {
+		this.setState({linkToImage: e.target.value});
 	}
 
 	render() {
