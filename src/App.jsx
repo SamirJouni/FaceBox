@@ -4,6 +4,7 @@ import Logo from "./components/Logo/Logo";
 import ImageForm from "./components/ImageForm/ImageForm";
 import Rank from "./components/Rank/Rank";
 import Particles from "react-particles-js";
+import Clarifai from "clarifai";
 import "./App.css";
 
 const particlesParams = {
