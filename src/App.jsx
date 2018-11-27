@@ -18,7 +18,9 @@ const particlesParams = {
 				}
 			}
 };
-
+const app = new Clarifai.App({
+	apiKey: ''
+})
 class App extends Component {
 	constructor () {
 		super();
