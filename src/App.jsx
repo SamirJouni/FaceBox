@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Particles from "react-particles-js";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
-import ImageForm from "./components/ImageForm/ImageForm";
 import Rank from "./components/Rank/Rank";
-import Particles from "react-particles-js";
+import ImageForm from "./components/ImageForm/ImageForm";
+import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Clarifai from "clarifai";
 import "./App.css";
 
@@ -53,6 +54,7 @@ class App extends Component {
 				<Logo />
 				<Rank />
 				<ImageForm onLinkInput={this.handleLinkInput} linkToImage={this.state.linkToImage} onSubmit={this.onSubmit}/>
+				<FaceRecognition />
 			</div>
 		);
 	}
