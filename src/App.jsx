@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Particles from "react-particles-js";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
@@ -8,25 +7,17 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Clarifai from "clarifai";
 import "./App.css";
 
-const particlesParams = {
-		particles: {
-				number: {
-					value: 80,
-					density: {
-						enable: true,
-						value_area: 800
-					}
-				}
-			}
-};
+
 const app = new Clarifai.App({
 	apiKey: 'ae065545ab8b471193bc116abcab07b2'
-})
+});
+
 class App extends Component {
 	constructor () {
 		super();
 		this.state = {
-			linkToImage: ''
+			linkToImage: '',
+			boundingBox: {}
 		}
 	}
 
@@ -36,7 +27,7 @@ class App extends Component {
 
 	onSubmit = e => {
 		e.preventDefault();
-		app.models.predict("a403429f2ddf4b49b307e318f00e528b", "https://samples.clarifai.com/face-det.jpg").then(
+		app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage).then(
     function(response) {
       // do something with response
     },
@@ -49,12 +40,11 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Particles params={particlesParams} className="particles"/>
 				<Navigation />
 				<Logo />
 				<Rank />
 				<ImageForm onLinkInput={this.handleLinkInput} linkToImage={this.state.linkToImage} onSubmit={this.onSubmit}/>
-				<FaceRecognition />
+				<FaceRecognition linkToImage={this.state.linkToImage} />
 			</div>
 		);
 	}

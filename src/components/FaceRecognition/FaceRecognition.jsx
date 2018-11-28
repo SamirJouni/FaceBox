@@ -1,10 +1,16 @@
-import React from 'react';
+import React from "react";
 
-
-const FaceRecognition = () => {
+const FaceRecognition = props => {
 	return (
-		<div></div>
-	 );
-}
+		<div className="flex justify-center items-center mt4 ma">
+			<img
+				src={props.linkToImage}
+				alt=""
+				width="500px"
+				height="auto"
+			/>
+		</div>
+	);
+};
 
 export default FaceRecognition;
