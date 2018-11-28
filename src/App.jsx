@@ -25,6 +25,13 @@ class App extends Component {
 		const image = document.getElementById('providedImage');
 		const width = Number(image.width);
 		const height = Number(image.height);
+
+		return {
+			left: faceBox.left_col * width,
+			top: faceBox.top_row * height,
+			right: width - (faceBox.right_col * width),
+			bottom: height - (faceBox.bottom_row * height)
+		}
 	};
 	handleLinkInput = e => {
 		this.setState({ linkToImage: e.target.value });
