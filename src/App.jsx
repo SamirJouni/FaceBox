@@ -61,7 +61,7 @@ class App extends Component {
 					linkToImage={this.state.linkToImage}
 					onSubmit={this.onSubmit}
 				/>
-				<FaceRecognition linkToImage={this.state.linkToImage} />
+				<FaceRecognition boundingBox={this.state.boundingBox} linkToImage={this.state.linkToImage} />
 			</div>
 		);
 	}
