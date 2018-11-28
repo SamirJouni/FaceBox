@@ -26,13 +26,15 @@ class App extends Component {
 		const width = Number(image.width);
 		const height = Number(image.height);
 
-		return {
+		const boundingBox =  {
 			left: faceBox.left_col * width,
 			top: faceBox.top_row * height,
 			right: width - (faceBox.right_col * width),
 			bottom: height - (faceBox.bottom_row * height)
 		}
+		this.setState({boundingBox});
 	};
+
 	handleLinkInput = e => {
 		this.setState({ linkToImage: e.target.value });
 	};
