@@ -1,4 +1,5 @@
 import React from "react";
+import "./FaceRecognition.css";
 
 const FaceRecognition = props => {
 	return (
@@ -10,6 +11,7 @@ const FaceRecognition = props => {
 				width="500px"
 				height="auto"
 			/>
+			<div className="bounding-box"></div>
 		</div>
 	);
 };
