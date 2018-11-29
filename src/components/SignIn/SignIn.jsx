@@ -29,9 +29,6 @@ const SignIn = () => {
 								id="password"
 							/>
 						</div>
-						<label className="pa0 ma0 lh-copy f6 pointer">
-							<input type="checkbox" /> Remember me
-						</label>
 					</fieldset>
 					<div className="">
 						<input
@@ -43,9 +40,6 @@ const SignIn = () => {
 					<div className="lh-copy mt3">
 						<a href="#0" className="f6 link dim black db">
 							Sign up
-						</a>
-						<a href="#0" className="f6 link dim black db">
-							Forgot your password?
 						</a>
 					</div>
 				</form>
