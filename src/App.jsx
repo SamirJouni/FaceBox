@@ -16,7 +16,8 @@ class App extends Component {
 		super();
 		this.state = {
 			linkToImage: "",
-			boundingBox: {}
+			boundingBox: {},
+			route: 'signin'
 		};
 	}
 
