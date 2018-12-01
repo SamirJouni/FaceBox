@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SignIn from "./components/SignIn/SignIn";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
@@ -17,23 +18,23 @@ class App extends Component {
 		this.state = {
 			linkToImage: "",
 			boundingBox: {},
-			route: 'signin'
+			route: "signin"
 		};
 	}
 
 	findFaceLocation = data => {
 		const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
-		const image = document.getElementById('providedImage');
+		const image = document.getElementById("providedImage");
 		const width = Number(image.width);
 		const height = Number(image.height);
 
-		const boundingBox =  {
+		const boundingBox = {
 			left: faceBox.left_col * width,
 			top: faceBox.top_row * height,
-			right: width - (faceBox.right_col * width),
-			bottom: height - (faceBox.bottom_row * height)
-		}
-		this.setState({boundingBox});
+			right: width - faceBox.right_col * width,
+			bottom: height - faceBox.bottom_row * height
+		};
+		this.setState({ boundingBox });
 	};
 
 	handleLinkInput = e => {
@@ -50,19 +51,27 @@ class App extends Component {
 			.catch(err => console.log(err));
 	};
 
-
 	render() {
 		return (
 			<div>
-				<Navigation />
-				<Logo />
-				<Rank />
-				<ImageForm
-					onLinkInput={this.handleLinkInput}
-					linkToImage={this.state.linkToImage}
-					onSubmit={this.onSubmit}
-				/>
-				<FaceRecognition boundingBox={this.state.boundingBox} linkToImage={this.state.linkToImage} />
+				{ this.state.route === 'signin' ?
+				<SignIn />
+				:
+					<React.Fragment>
+						<Navigation />
+						<Logo />
+						<Rank />
+						<ImageForm
+							onLinkInput={this.handleLinkInput}
+							linkToImage={this.state.linkToImage}
+							onSubmit={this.onSubmit}
+						/>
+						<FaceRecognition
+							boundingBox={this.state.boundingBox}
+							linkToImage={this.state.linkToImage}
+						/>
+					</React.Fragment>
+				}
 			</div>
 		);
 	}
