@@ -62,7 +62,7 @@ class App extends Component {
 				<SignIn onRouteChange={this.handleRouteChange}/>
 				:
 					<React.Fragment>
-						<Navigation />
+						<Navigation onRouteChange={this.handleRouteChange}/>
 						<Logo />
 						<Rank />
 						<ImageForm
