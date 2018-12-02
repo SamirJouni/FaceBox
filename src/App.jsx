@@ -52,7 +52,7 @@ class App extends Component {
 	};
 
 	handleRouteChange = () => {
-
+		this.setState({route: 'home'});
 	}
 
 	render() {
