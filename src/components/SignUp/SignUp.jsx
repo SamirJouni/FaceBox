@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignIn = props => {
+const SignUp = props => {
 	return (
 		<article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center flex justify-center items-center">
 			<main className="pa4 black-80">
@@ -40,7 +40,7 @@ const SignIn = props => {
 					</div>
 					<div className="lh-copy mt3">
 						<a href="#0" className="f6 link dim black db">
-							Sign Up
+							Sign In
 						</a>
 					</div>
 				</form>
@@ -49,4 +49,4 @@ const SignIn = props => {
 	);
 };
 
-export default SignIn;
+export default SignUp;
