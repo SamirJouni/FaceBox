@@ -51,6 +51,10 @@ class App extends Component {
 			.catch(err => console.log(err));
 	};
 
+	handleRouteChange = () => {
+
+	}
+
 	render() {
 		return (
 			<div>
