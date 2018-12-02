@@ -17,10 +17,10 @@ const particlesParams = {
 		}
 };
 ReactDOM.render(
-	<div>
+	<React.Fragment>
 		<Particles params={particlesParams} className="particles"/>
 		<App />
-	</div>,
+	</React.Fragment>,
 	document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
