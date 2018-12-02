@@ -55,7 +55,7 @@ class App extends Component {
 		return (
 			<div>
 				{ this.state.route === 'signin' ?
-				<SignIn />
+				<SignIn onRouteChange={this.handleRouteChange}/>
 				:
 					<React.Fragment>
 						<Navigation />
