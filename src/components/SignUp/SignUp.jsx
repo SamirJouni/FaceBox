@@ -13,7 +13,7 @@ const SignUp = props => {
 							</label>
 							<input
 								className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-								type="name"
+								type="text"
 								name="name"
 								id="name"
 							/>
