@@ -34,14 +34,14 @@ const SignIn = props => {
 						<input
 							className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
 							type="submit"
-							value="Sign in"
+							value="signin"
 							onClick={() => props.onRouteChange('home')}
 						/>
 					</div>
 					<div className="lh-copy mt3">
-						<a href="#0" className="f6 link dim black db">
+						<p className="f6 link dim black db pointer" onClick={() => props.onRouteChange('signup')}>
 							Sign Up
-						</a>
+						</p>
 					</div>
 				</form>
 			</main>
