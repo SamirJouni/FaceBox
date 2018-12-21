@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SignIn from "./components/SignIn/SignIn";
+import SignUp from "./components/SignUp/SignUp";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
@@ -58,9 +59,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				{ this.state.route === 'signin' ?
-				<SignIn onRouteChange={this.handleRouteChange}/>
-				:
+				{ this.state.route === 'home' ?
 					<React.Fragment>
 						<Navigation onRouteChange={this.handleRouteChange}/>
 						<Logo />
@@ -74,7 +73,12 @@ class App extends Component {
 							boundingBox={this.state.boundingBox}
 							linkToImage={this.state.linkToImage}
 						/>
-					</React.Fragment>
+					</React.Fragment> :
+					(
+						this.state.route === 'signin' ?
+						<SignIn onRouteChange={this.handleRouteChange}/>
+						: <SignUp onRouteChange={this.handleRouteChange}/>
+					)
 				}
 			</div>
 		);
