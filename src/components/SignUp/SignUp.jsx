@@ -40,7 +40,7 @@ const SignUp = props => {
 					</div>
 					<div className="lh-copy mt3">
 						<a href="#0" className="f6 link dim black db">
-							Sign In
+							Sign Up
 						</a>
 					</div>
 				</form>
