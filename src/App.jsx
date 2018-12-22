@@ -19,7 +19,8 @@ class App extends Component {
 		this.state = {
 			linkToImage: "",
 			boundingBox: {},
-			route: "signin"
+			route: "signin",
+			isSignedin: false
 		};
 	}
 
