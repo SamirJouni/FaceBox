@@ -65,7 +65,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Navigation onRouteChange={this.handleRouteChange}/>
+				<Navigation isSignedin={this.state.isSignedin} onRouteChange={this.handleRouteChange}/>
 				{ this.state.route === 'home' ?
 					<React.Fragment>
 						<Logo />
