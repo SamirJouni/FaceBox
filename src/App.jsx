@@ -59,9 +59,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<Navigation onRouteChange={this.handleRouteChange}/>
 				{ this.state.route === 'home' ?
 					<React.Fragment>
-						<Navigation onRouteChange={this.handleRouteChange}/>
 						<Logo />
 						<Rank />
 						<ImageForm
