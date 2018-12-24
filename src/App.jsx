@@ -23,11 +23,12 @@ class App extends Component {
 			isSignedin: false
 		};
 	}
-	ComponentDidMount () {
-		fetch('localhost:3000')
-		.then(res => res.json())
-		.then(data => console.log(data))
+	componentDidMount() {
+			fetch('http://localhost:3000/')
+			.then(res => res.json())
+			.then(console.log)
 	}
+
 	findFaceLocation = data => {
 		const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
 		const image = document.getElementById("providedImage");
@@ -50,11 +51,11 @@ class App extends Component {
 	onSubmit = e => {
 		e.preventDefault();
 		app.models
-			.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
-			.then(res => {
-				this.findFaceLocation(res);
-			})
-			.catch(err => console.log(err));
+		.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
+		.then(res => {
+			this.findFaceLocation(res);
+		})
+		.catch(err => console.log(err));
 	};
 
 	handleRouteChange = (route) => {
