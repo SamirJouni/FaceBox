@@ -23,7 +23,11 @@ class App extends Component {
 			isSignedin: false
 		};
 	}
-
+	ComponentDidMount () {
+		fetch('localhost:3000')
+		.then(res => res.json())
+		.then(data => console.log(data))
+	}
 	findFaceLocation = data => {
 		const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
 		const image = document.getElementById("providedImage");
