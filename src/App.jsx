@@ -23,11 +23,6 @@ class App extends Component {
 			isSignedin: false
 		};
 	}
-	componentDidMount() {
-			fetch('http://localhost:3000/')
-			.then(res => res.json())
-			.then(console.log)
-	}
 
 	findFaceLocation = data => {
 		const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;

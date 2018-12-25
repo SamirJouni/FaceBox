@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from 'react';
+class SignIn extends Component {
 
-const SignIn = props => {
-	return (
-		<article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center flex justify-center items-center">
+	render() {
+		return (
+			<article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center flex justify-center items-center">
 			<main className="pa4 black-80">
 				<form className="measure flex justify-center items-center flex-column">
 					<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -46,7 +47,8 @@ const SignIn = props => {
 				</form>
 			</main>
 		</article>
-	);
-};
+		 );
+	}
+}
 
 export default SignIn;
