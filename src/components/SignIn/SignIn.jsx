@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 
 class SignIn extends Component {
 
+	constructor () {
+		super();
+		this.state = {
+			email: '',
+			password: ''
+		}
+	}
+
+	handleEmailChange = e => {
+		this.setState({email: e.target.value});
+	}
+	handlePasswordChange = e => {
+		this.setState({password: e.target.value});
+	}
+	handleSubmit = () => {
+		console.log( this.state );
+		this.props.onRouteChange('home')
+	}
 	render() {
 		const { onRouteChange } = this.props;
 		return (
@@ -19,6 +37,8 @@ class SignIn extends Component {
 								type="email"
 								name="email-address"
 								id="email-address"
+								value={this.state.email}
+								onChange={this.handleEmailChange}
 							/>
 						</div>
 						<div className="mv3">
@@ -30,6 +50,8 @@ class SignIn extends Component {
 								type="password"
 								name="password"
 								id="password"
+								value={this.state.password}
+								onChange={this.handlePasswordChange}
 							/>
 						</div>
 					</fieldset>
@@ -38,7 +60,7 @@ class SignIn extends Component {
 							className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
 							type="submit"
 							value="signin"
-							onClick={() => onRouteChange('home')}
+							onClick={this.handleSubmit}
 						/>
 					</div>
 					<div className="lh-copy mt3">
