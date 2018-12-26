@@ -17,7 +17,7 @@ class SignIn extends Component {
 	};
 	handleSubmit = () => {
 		fetch("http://localhost:3000/signin", {
-			method: "post",
+			method: "POST",
 			header: {
 				"Content-Type": "application/json"
 			},
