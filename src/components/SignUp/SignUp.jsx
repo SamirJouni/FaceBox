@@ -32,8 +32,9 @@ class SignUp extends Component {
 			})
 		})
 		.then(res => res.json())
-		.then( data => {
-			if (data === 'signedin') {
+		.then(user => {
+			if (user) {
+				this.props.loadUser(user);
 				this.props.onRouteChange("home");
 			}
 		});
