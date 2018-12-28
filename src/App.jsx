@@ -64,6 +64,14 @@ class App extends Component {
 						body: JSON.stringify({
 							id: this.state.user.id
 						})
+						.then(res => res.json())
+						.then(count => {
+							this.setState({
+								user: {
+									entries: count
+								}
+							})
+						})
 					})
 				}
 				this.findFaceLocation(res);
