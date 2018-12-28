@@ -91,7 +91,10 @@ class App extends Component {
 				{this.state.route === "home" ? (
 					<React.Fragment>
 						<Logo />
-						<Rank />
+						<Rank
+							name={this.state.user.name}
+							entries={this.state.user.entries}
+						/>
 						<ImageForm
 							onLinkInput={this.handleLinkInput}
 							linkToImage={this.state.linkToImage}
