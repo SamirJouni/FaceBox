@@ -103,7 +103,10 @@ class App extends Component {
 						/>
 					</React.Fragment>
 				) : this.state.route === "signin" ? (
-					<SignIn onRouteChange={this.handleRouteChange} />
+					<SignIn
+						loadUser={this.loadUser}
+						onRouteChange={this.handleRouteChange}
+					/>
 				) : (
 					<SignUp
 						onRouteChange={this.handleRouteChange}
