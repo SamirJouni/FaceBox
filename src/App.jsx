@@ -83,7 +83,7 @@ class App extends Component {
 					(
 						this.state.route === 'signin' ?
 						<SignIn onRouteChange={this.handleRouteChange}/>
-						: <SignUp onRouteChange={this.handleRouteChange}/>
+						: <SignUp onRouteChange={this.handleRouteChange} loadUser={this.loadUser}/>
 					)
 				}
 			</div>
