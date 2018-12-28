@@ -20,7 +20,14 @@ class App extends Component {
 			linkToImage: "",
 			boundingBox: {},
 			route: "signin",
-			isSignedin: false
+			isSignedin: false,
+			user: {
+				id: "",
+				name: "",
+				email: "",
+				entries: 0,
+				joined: ""
+			}
 		};
 	}
 
@@ -46,27 +53,42 @@ class App extends Component {
 	onSubmit = e => {
 		e.preventDefault();
 		app.models
-		.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
-		.then(res => {
-			this.findFaceLocation(res);
-		})
-		.catch(err => console.log(err));
+			.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
+			.then(res => {
+				this.findFaceLocation(res);
+			})
+			.catch(err => console.log(err));
 	};
 
-	handleRouteChange = (route) => {
-		if(route === 'home') {
-			this.setState({isSignedin: true})
-		} else if (route === 'signout') {
-			this.setState({isSignedin: false})
+	handleRouteChange = route => {
+		if (route === "home") {
+			this.setState({ isSignedin: true });
+		} else if (route === "signout") {
+			this.setState({ isSignedin: false });
 		}
-		this.setState({route});
-	}
+		this.setState({ route });
+	};
+
+	loadUser = data => {
+		this.setState({
+			user: {
+				id: data.id,
+				name: data.name,
+				email: data.email,
+				entries: data.entries,
+				joined: data.joined
+			}
+		});
+	};
 
 	render() {
 		return (
 			<div>
-				<Navigation isSignedin={this.state.isSignedin} onRouteChange={this.handleRouteChange}/>
-				{ this.state.route === 'home' ?
+				<Navigation
+					isSignedin={this.state.isSignedin}
+					onRouteChange={this.handleRouteChange}
+				/>
+				{this.state.route === "home" ? (
 					<React.Fragment>
 						<Logo />
 						<Rank />
@@ -79,13 +101,15 @@ class App extends Component {
 							boundingBox={this.state.boundingBox}
 							linkToImage={this.state.linkToImage}
 						/>
-					</React.Fragment> :
-					(
-						this.state.route === 'signin' ?
-						<SignIn onRouteChange={this.handleRouteChange}/>
-						: <SignUp onRouteChange={this.handleRouteChange} loadUser={this.loadUser}/>
-					)
-				}
+					</React.Fragment>
+				) : this.state.route === "signin" ? (
+					<SignIn onRouteChange={this.handleRouteChange} />
+				) : (
+					<SignUp
+						onRouteChange={this.handleRouteChange}
+						loadUser={this.loadUser}
+					/>
+				)}
 			</div>
 		);
 	}
