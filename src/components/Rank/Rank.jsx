@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rank = () => {
+const Rank = ({name, entries}) => {
 	return (
 		<div className="flex justify-center items-center flex-column">
 			<div className="white f3 ">Samir, Your Rank Is...</div>
