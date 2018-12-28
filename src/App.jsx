@@ -55,6 +55,17 @@ class App extends Component {
 		app.models
 			.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
 			.then(res => {
+				if(res) {
+					fetch('http://localhost:3000/image', {
+						method: "PUT",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							id: this.state.user.id
+						})
+					})
+				}
 				this.findFaceLocation(res);
 			})
 			.catch(err => console.log(err));
