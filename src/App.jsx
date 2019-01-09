@@ -12,6 +12,19 @@ import "./App.css";
 const app = new Clarifai.App({
 	apiKey: "ae065545ab8b471193bc116abcab07b2"
 });
+const initialState = {
+	linkToImage: "",
+	boundingBox: {},
+	route: "signin",
+	isSignedin: false,
+	user: {
+		id: "",
+		name: "",
+		email: "",
+		entries: 0,
+		joined: ""
+	}
+};
 
 class App extends Component {
 	constructor() {
@@ -79,7 +92,7 @@ class App extends Component {
 		if (route === "home") {
 			this.setState({ isSignedin: true });
 		} else if (route === "signout") {
-			this.setState({ isSignedin: false });
+			this.setState(initialState);
 		}
 		this.setState({ route });
 	};
