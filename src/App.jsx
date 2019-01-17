@@ -6,7 +6,6 @@ import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
 import ImageForm from "./components/ImageForm/ImageForm";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
-import Clarifai from "clarifai";
 import "./App.css";
 
 
