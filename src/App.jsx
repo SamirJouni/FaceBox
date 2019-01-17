@@ -9,9 +9,7 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Clarifai from "clarifai";
 import "./App.css";
 
-const app = new Clarifai.App({
-	apiKey: "ae065545ab8b471193bc116abcab07b2"
-});
+
 const initialState = {
 	linkToImage: "",
 	boundingBox: {},
@@ -65,8 +63,15 @@ class App extends Component {
 
 	onSubmit = e => {
 		e.preventDefault();
-		app.models
-			.predict(Clarifai.FACE_DETECT_MODEL, this.state.linkToImage)
+		fetch("http://localhost:3000/imageurl", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				linkToImage: this.state.linkToImage
+			})
+		}).then(res => res.json())
 			.then(res => {
 				if (res) {
 					fetch("http://localhost:3000/image", {
