@@ -62,7 +62,7 @@ class App extends Component {
 
 	onSubmit = e => {
 		e.preventDefault();
-		fetch("http://localhost:3000/imageurl", {
+		fetch("https://warm-fortress-98206.herokuapp.com/imageurl", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -73,7 +73,7 @@ class App extends Component {
 		}).then(res => res.json())
 			.then(res => {
 				if (res) {
-					fetch("http://localhost:3000/image", {
+					fetch("https://warm-fortress-98206.herokuapp.com/image", {
 						method: "PUT",
 						headers: {
 							"Content-Type": "application/json"
