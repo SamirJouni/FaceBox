@@ -20,7 +20,7 @@ class SignUp extends Component {
 		this.setState({ password: e.target.value });
 	};
 	handleSubmit = () => {
-		fetch("http://localhost:3000/signup", {
+		fetch("https://warm-fortress-98206.herokuapp.com/signup", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json"
