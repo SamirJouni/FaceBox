@@ -4,10 +4,10 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-particles-js": "^2.6.0",
-    "react-scripts": "^3.0.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-particles-js": "^2.7.0",
+    "react-scripts": "^3.2.0",
     "react-tilt": "^0.1.4",
     "tachyons": "^4.11.1"
   },
@@ -29,6 +29,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.1.1"
   }
 }
